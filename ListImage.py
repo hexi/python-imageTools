@@ -3,21 +3,19 @@
 
 import os
 import sys
+from listdrawable import ListDrawable
 
 class ListImage(object):
   def __init__(self, searchDir):
     self.searchDir = searchDir
     print('init ListImage searchDir: %s' % searchDir)
   def images(self):
-    drawableDirs = self.__list_drawable_dir()
+    drawableDirs = ListDrawable(self.searchDir).search()
     imageFiles = [y for x in map(self.__list_files, drawableDirs) for y in x]
     return imageFiles
 
-  def __list_drawable_dir(self):
-    return [x for x in os.listdir(self.searchDir) if os.path.isdir(os.path.join(self.searchDir, x)) and (x.startswith('drawable') or x.startswith('mipmap'))]
-
   def __list_files(self, d):
-    baseDir = os.path.join(self.searchDir, d)
+    baseDir = d
     return [os.path.join(baseDir, x) for x in os.listdir(baseDir) if os.path.isfile(os.path.join(baseDir, x)) and self.is_image(x)]
 
   def is_image(self, file):
@@ -30,5 +28,5 @@ if __name__ == '__main__':
     searchDir = sys.argv[1]
     print('from input searchDir:', searchDir)
 
-  LI = ListImage(searchDir)
-  print('searched images======>\n', LI.images())
+  images = ListImage(searchDir).images()
+  print('searched %d images======>\n%s' % (len(images), images))
