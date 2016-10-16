@@ -34,16 +34,14 @@ class ListDrawable(object):
 			self.__find_drawables(listResult, tmpPath)
 
 	def __is_drawable_dir(self, folder):
-		bp = os.path.split(folder)
-		cname = bp[1]
-		return (cname.startswith('drawable') or cname.startswith('mipmap'))
+		head, tail = os.path.split(folder)
+		return (tail.startswith('drawable') or tail.startswith('mipmap'))
 
 	def __is_in_blacklist(self, folder):
-		bp = os.path.split(folder)
-		cname = bp[1]
+		head, tail = os.path.split(folder)
 		inBlacklist = False
 		try:
-			index = ListDrawable.blacklist.index(cname)
+			index = ListDrawable.blacklist.index(tail)
 			inBlacklist = index >= 0
 		except Exception as e:
 			inBlacklist = False
