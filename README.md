@@ -3,6 +3,7 @@ git clone git@github.com:baidao/python-imageTools.git
 
 mac环境下安装python3
 没有brew先安装brew
+
 brew install python3
 
 cd python-imageTools
