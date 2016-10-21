@@ -1,4 +1,16 @@
 # python-imageTools
+git clone git@github.com:baidao/python-imageTools.git
+
+mac环境下安装python3
+没有brew先安装brew
+brew install python3
+
+cd python-imageTools
+
+pip3 install Pillow
+
+pip3 install --upgrade tinify
+
 ##自动压缩图片
 python3 /Users/hexi/Documents/python-demo/imageTools/CompressImage.py [目标路径]
 ###`注意`

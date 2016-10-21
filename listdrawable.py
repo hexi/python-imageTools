@@ -9,8 +9,8 @@ class ListDrawable(object):
 
 	def __init__(self, searchDir):
 		super(ListDrawable, self).__init__()
-		self.searchDir = searchDir
-		print('init ListDrawable searchDir: %s' % searchDir)
+		self.searchDir = os.path.abspath(searchDir)
+		print('init ListDrawable searchDir: %s' % self.searchDir)
 
 	def search(self):
 		drawableDirs = list()

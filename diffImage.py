@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#-*- encoding:utf-8 -*-
+
 from PIL import ImageChops, Image
 import math, operator
 import sys

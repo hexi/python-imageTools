@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- encoding:utf-8 -*-
 
 import os
 # /usr/local/lib/python3.4/site-packages/PIL
