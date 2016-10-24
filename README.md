@@ -32,6 +32,7 @@ pip3 install --upgrade tinify
 - alias diff_img='python3 /Users/hexi/Documents/python_project/python-imageTools/diffImage.py'
 - alias list_img='python3 /Users/hexi/Documents/python_project/python-imageTools/ListImage.py'
 
-然后
+***然后***
+
 1. cd ${android_project_path}
 2. cpr_img
